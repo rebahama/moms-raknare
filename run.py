@@ -9,6 +9,12 @@ def index():
 
 
 
+@app.route('/calculatesix')
+def calculatesix():
+    return render_template('calculatesix.html')
+
+
+
 if __name__ == "__main__":
     app.run(
         debug=True

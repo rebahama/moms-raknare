@@ -1,0 +1,11 @@
+.card{
+    padding: 30px;
+    margin-top: 40px;
+}
+.momsraknare{
+    padding: 10px;
+    font-weight: bold;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}

@@ -1,9 +1,8 @@
 {%extends "base.html"%}
+
 {%block content%}
-<div class="mt-4 p-5 bg-primary text-white rounded text-center">
-    <h1>Räkna ut din moms nedan</h1>
-    <p>Lorem ipsum...</p>
-    <a href="#" class="btn btn-success">Click here</a>
+<div class="mt-4 p-5 bg-primary text-white rounded text-center nogu">
+    <h1>Välkommen, välj nedan vilken moms du vill räkna ut</h1>
 </div>
 
 <div class="container-fluid">
@@ -11,22 +10,25 @@
         <div class="col">
             <div class="card">
                 <div class="card-body">
-                    <h5 class="card-title"> 25%</h5>
-                </div>
+                    <h5 class="card-title card-text text-center">Moms 6%</h5>
+                </div>  
+                <a href="{{url_for('calculatesix')}}" class="btn btn-success">Räkna ut moms för 6%</a>
             </div>
         </div>
         <div class="col">
             <div class="card">
                 <div class="card-body">
-                    <h5 class="card-title"> 25%</h5>
+                    <h5 class="card-title text-center">Moms 25%</h5>
                 </div>
+                <a href="#" class="btn btn-success">Räkna ut moms för 25%</a>
             </div>
         </div>
         <div class="col">
             <div class="card">
                 <div class="card-body">
-                    <h5 class="card-title"> 25%</h5>
+                    <h5 class="card-title text-center">Moms 30%</h5>
                 </div>
+                <a href="#" class="btn btn-success">Räkna ut moms för 30%</a>
             </div>
         </div>
     </div>
