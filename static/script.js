@@ -8,7 +8,7 @@ function countSix(){
     valuemoms=parseFloat(valuesix.value);
     sumIt=valuemoms * 0.06;
     
-    result.value=sumIt
+    result.value=Math.round(sumIt)
     console.log(sumIt)
 }
 

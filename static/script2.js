@@ -6,7 +6,7 @@ function testing(){
     newSum=parseInt(sumTwentyfive.value);
     newSumTwo=newSum * 0.25
     let result2=document.getElementById('resulttjugofem')
-    result2.value=newSumTwo
+    result2.value=Math.round(newSumTwo)
     console.log(newSumTwo)
 
     
