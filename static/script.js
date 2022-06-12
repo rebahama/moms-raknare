@@ -1,9 +1,6 @@
 
-
-let btn=document.getElementById('calculatesix');
-btn.addEventListener('click', countSix)
-
-
+    let btn=document.getElementById('calculatesix');
+    btn.addEventListener('click', countSix);
 
 function countSix(){
     let valuesix=document.getElementById('summasex');
@@ -14,4 +11,13 @@ function countSix(){
     result.value=sumIt
     console.log(sumIt)
 }
+
+
+
+
+
+
+
+
+
 
