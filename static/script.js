@@ -1,4 +1,7 @@
 
+    
+   window.addEventListener('DOMContentLoaded', (event) => {
+    
     let btn=document.getElementById('calculatesix');
     btn.addEventListener('click', countSix);
 
@@ -11,8 +14,8 @@ function countSix(){
     result.value=Math.round(sumIt)
     console.log(sumIt)
 }
-
-
+});
+    
 
 
 

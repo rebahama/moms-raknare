@@ -17,6 +17,10 @@ def calculatesix():
 def calculatetwentyfive():
     return render_template('calculatetwentyfive.html')
 
+@app.route('/calculatethirty')
+def calculatethirty():
+    return render_template('calculatethirty.html')
+
 
 if __name__ == "__main__":
     app.run(
