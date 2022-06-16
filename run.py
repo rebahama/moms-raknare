@@ -32,8 +32,12 @@ def display():
     return render_template('display.html', moms=moms)
 
 
-@app.route('/calculatesix')
+@app.route('/calculatesix',  methods=["GET", "POST"])
 def calculatesix():
+    if request.method=="POST":
+        moms = Moms(moms=request.form.get("result"))
+        db.session.add(moms)
+        db.session.commit()
     return render_template('calculatesix.html')
 
 
