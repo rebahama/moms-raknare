@@ -1,0 +1,36 @@
+{%extends "base.html"%}
+
+{%block content%}
+<div class="mt-4 p-5 bg-primary text-white rounded text-center nogu">
+    <h1>Välkommen, välj nedan vilken moms du vill räkna ut</h1>
+</div>
+<h1> hello</h1>
+<div class="container-fluid">
+    <div class="row row-cols-1 row-cols-md-3 g-4">
+        <div class="col">
+            <div class="card">
+                <div class="card-body">
+                    <h5 class="card-title card-text text-center">Moms 6%</h5>
+                </div>  
+                <a href="{{url_for('calculatesix')}}" class="btn btn-success">Räkna ut moms för 6%</a>
+            </div>
+        </div>
+        <div class="col">
+            <div class="card">
+                <div class="card-body">
+                    <h5 class="card-title text-center">Moms 25%</h5>
+                </div>
+                <a href="{{url_for('calculatetwentyfive')}}" class="btn btn-success">Räkna ut moms för 25%</a>
+            </div>
+        </div>
+        <div class="col">
+            <div class="card">
+                <div class="card-body">
+                    <h5 class="card-title text-center">Moms 30%</h5>
+                </div>
+                <a href="{{url_for('calculatethirty')}}" class="btn btn-success">Räkna ut moms för 30%</a>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
