@@ -20,3 +20,31 @@
 .card-pos{
     margin-top: 100px;
 }
+.hero{
+    height: 400px;
+    width:100%;
+    background: url('../static/taxi.jpeg') no-repeat center center;
+    animation-name: hero-zoom;  /* skapa ett namn för animering*/
+    animation-duration: 3s;
+    animation-fill-mode: forwards;
+    overflow: hidden;
+   
+
+}
+.outer{
+    width: 100%;
+    overflow: hidden;
+    margin-bottom: 50px;
+}
+
+
+@keyframes hero-zoom{ /* själva animeringen sker här*/
+    from{
+transform: scale(1);
+    }
+ to{
+transform: scale(1.1);
+}
+
+
+}
