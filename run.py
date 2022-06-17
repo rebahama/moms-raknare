@@ -1,5 +1,7 @@
 from flask_sqlalchemy import SQLAlchemy
-from flask import Flask, render_template, request
+from flask import Flask, render_template, request, redirect, url_for
+from datetime import datetime
+
 
 app = Flask(__name__)
 
@@ -10,10 +12,11 @@ db = SQLAlchemy(app)
 class Momssix(db.Model):
     moms_id = db.Column(db.Integer, primary_key=True)
     moms_six = db.Column(db.Integer)
+    date_add = db.Column(db.DateTime, default=datetime.utcnow)
 
     def __repr__(self):
             # __repr__ to represent itself in the form of a string
-            return f"6:{self.moms_six}"
+            return f"6:{self.moms_six} {self.date_add}" 
 
 class Momstwentyfive(db.Model):
     moms_id = db.Column(db.Integer, primary_key=True)
@@ -26,6 +29,7 @@ class Momstwentyfive(db.Model):
 class Momsthirty(db.Model):
     moms_id = db.Column(db.Integer, primary_key=True)
     moms_thirty = db.Column(db.Integer)
+    
 
     def __repr__(self):
             # __repr__ to represent itself in the form of a string
@@ -67,6 +71,7 @@ def calculatesix():
         moms = Momssix(moms_six=request.form.get("result"))
         db.session.add(moms)
         db.session.commit()
+        return redirect(url_for("showsix"))
     return render_template('calculatesix.html')
 
 
@@ -76,6 +81,7 @@ def calculatetwentyfive():
         momstwentyfive = Momstwentyfive(moms_twentyfive=request.form.get("resulttwentyfive"))
         db.session.add(momstwentyfive)
         db.session.commit()
+        return redirect(url_for("showtwentyfive"))
     return render_template('calculatetwentyfive.html')
 
 @app.route('/calculatethirty', methods=["GET", "POST"])
@@ -84,6 +90,7 @@ def calculatethirty():
         momsthirty = Momsthirty(moms_thirty=request.form.get("resultthirty"))
         db.session.add(momsthirty)
         db.session.commit()
+        return redirect(url_for("showthirty"))
     return render_template('calculatethirty.html')
 
 
