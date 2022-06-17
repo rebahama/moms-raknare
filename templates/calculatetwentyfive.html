@@ -4,7 +4,7 @@
     <div class="row row-cols-md-3 justify-content-center text-center ">
         <div class="col">
             <h2> Moms 25%</h2>
-            <form class="momsraknare" class="text-center">
+            <form class="momsraknare" class="text-center" action="{{url_for('calculatetwentyfive')}}" method="POST">
                 <div class="mb-3">
                     <label for="summatjugofem" class="form-label">Skriv in din summa under</label>
                     <input type="text" class="form-control" id="summatjugofem" aria-describedby="emailHelp">
@@ -12,7 +12,7 @@
                 <button type="button" id="calculatetjugofem" class="btn btn-primary">Räkna ut moms</button>
                 <div class="mb-3">
                     <label for="resulttjugofem" class="form-label">Resultat av momsuträkning</label>
-                    <input type="text" class="form-control" id="resulttjugofem">
+                    <input type="text" class="form-control" id="resulttjugofem" name="resulttwentyfive">
                 </div>
                 <button type="submit" class="btn btn-primary">Spara Resultat</button>
             </form>

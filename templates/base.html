@@ -23,13 +23,24 @@
               <li class="nav-item">
                 <a class="nav-link" aria-current="page" href="{{url_for('index')}}">Hem</a>
               </li>
+              <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                  MomsKategori
+                </a>
+                <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                  <li><a class="dropdown-item" href="{{url_for('showsix')}}">Moms 6%</a></li>
+                  <li><a class="dropdown-item" href="{{url_for('showtwentyfive')}}">Moms 25%</a></li>
+                  <li><a class="dropdown-item" href="#">Moms 30%</a></li>
+                </ul>
+              </li>
+         
               <li class="nav-item">
                 <a class="nav-link" href="{{url_for('index')}}">Räkna moms</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="{{url_for('display')}}">Visa sparad moms</a>
+                    <a class="nav-link" href="{{url_for('display')}}">Visa allting</a>
                 </li>
-            </ul>
+              </ul>
           </div>
         </div>
       </nav>
@@ -41,7 +52,7 @@
     <!-- Copyright -->
     <div class="text-center p-3 bg-primary text-white">
       © 2022 Copyright:
-      <a class="text-dark" href="https://mdbootstrap.com/">MDBootstrap.com</a>
+      <a class="text-dark" href="https://mdbootstrap.com/">Momskalkylator</a>
     </div>
     <!-- Copyright -->
   </footer>

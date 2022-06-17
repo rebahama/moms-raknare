@@ -7,16 +7,29 @@ app.config['SQLALCHEMY_DATABASE_URI'] = 'postgresql:///moms'
 
 db = SQLAlchemy(app)
 
-class Moms(db.Model):
+class Momssix(db.Model):
     moms_id = db.Column(db.Integer, primary_key=True)
-    moms_six = db.Column(db.Integer, nullable=False)
-    moms_twentyfive = db.Column(db.Integer, nullable=False)
-    moms_thirty = db.Column(db.Integer, nullable=False)
+    moms_six = db.Column(db.Integer)
 
     def __repr__(self):
             # __repr__ to represent itself in the form of a string
-            return f"6:{self.moms_six} 25: {self.moms_twentyfive} 30 :{self.moms_thirty}"
+            return f"6:{self.moms_six}"
 
+class Momstwentyfive(db.Model):
+    moms_id = db.Column(db.Integer, primary_key=True)
+    moms_twentyfive = db.Column(db.Integer)
+
+    def __repr__(self):
+            # __repr__ to represent itself in the form of a string
+            return f"25:{self.moms_twentyfive}"
+
+class Momsthirty(db.Model):
+    moms_id = db.Column(db.Integer, primary_key=True)
+    moms_thirty = db.Column(db.Integer)
+
+    def __repr__(self):
+            # __repr__ to represent itself in the form of a string
+            return f"30:{self.moms_thirty}"
 
 
 
@@ -28,21 +41,37 @@ def index():
 
 @app.route('/display')
 def display():
-    moms = list(Moms.query.order_by(Moms.moms_id).all())
+    moms = list(Momssix.query.order_by(Momssix.moms_id).all())
     return render_template('display.html', moms=moms)
+
+@app.route('/showsix')
+def showsix():
+    moms = list(Momssix.query.order_by(Momssix.moms_id).all())
+    return render_template('showsix.html', moms=moms)
+
+
+@app.route('/showtwentyfive')
+def showtwentyfive():
+    moms = list(Momstwentyfive.query.order_by(Momstwentyfive.moms_id).all())
+    return render_template('showtwentyfive.html', moms=moms)
+
 
 
 @app.route('/calculatesix',  methods=["GET", "POST"])
 def calculatesix():
     if request.method=="POST":
-        moms = Moms(moms=request.form.get("result"))
+        moms = Momssix(moms_six=request.form.get("result"))
         db.session.add(moms)
         db.session.commit()
     return render_template('calculatesix.html')
 
 
-@app.route('/calculaetwentyfive')
+@app.route('/calculaetwentyfive', methods=["GET", "POST"])
 def calculatetwentyfive():
+    if request.method=="POST":
+        momstwentyfive = Momstwentyfive(moms_twentyfive=request.form.get("resulttwentyfive"))
+        db.session.add(momstwentyfive)
+        db.session.commit()
     return render_template('calculatetwentyfive.html')
 
 @app.route('/calculatethirty')
