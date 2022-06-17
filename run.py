@@ -55,6 +55,10 @@ def showtwentyfive():
     moms = list(Momstwentyfive.query.order_by(Momstwentyfive.moms_id).all())
     return render_template('showtwentyfive.html', moms=moms)
 
+@app.route('/showthirty')
+def showthirty():
+    moms = list(Momsthirty.query.order_by(Momsthirty.moms_id).all())
+    return render_template('showthirty.html', moms=moms)
 
 
 @app.route('/calculatesix',  methods=["GET", "POST"])
@@ -74,8 +78,12 @@ def calculatetwentyfive():
         db.session.commit()
     return render_template('calculatetwentyfive.html')
 
-@app.route('/calculatethirty')
+@app.route('/calculatethirty', methods=["GET", "POST"])
 def calculatethirty():
+    if request.method=="POST":
+        momsthirty = Momsthirty(moms_thirty=request.form.get("resultthirty"))
+        db.session.add(momsthirty)
+        db.session.commit()
     return render_template('calculatethirty.html')
 
 

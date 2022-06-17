@@ -25,18 +25,25 @@
               </li>
               <li class="nav-item dropdown">
                 <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                  MomsKategori
+                  Visa moms
                 </a>
                 <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
                   <li><a class="dropdown-item" href="{{url_for('showsix')}}">Moms 6%</a></li>
                   <li><a class="dropdown-item" href="{{url_for('showtwentyfive')}}">Moms 25%</a></li>
-                  <li><a class="dropdown-item" href="#">Moms 30%</a></li>
+                  <li><a class="dropdown-item" href="{{url_for('showthirty')}}">Moms 30%</a></li>
                 </ul>
               </li>
          
-              <li class="nav-item">
-                <a class="nav-link" href="{{url_for('index')}}">Räkna moms</a>
-                </li>
+               <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                  Räkna moms
+                </a>
+                <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                  <li><a class="dropdown-item" href="{{url_for('calculatesix')}}">Moms 6%</a></li>
+                  <li><a class="dropdown-item" href="{{url_for('calculatetwentyfive')}}">Moms 25%</a></li>
+                  <li><a class="dropdown-item" href="{{url_for('calculatethirty')}}">Moms 30%</a></li>
+                </ul>
+              </li>
                 <li class="nav-item">
                     <a class="nav-link" href="{{url_for('display')}}">Visa allting</a>
                 </li>
