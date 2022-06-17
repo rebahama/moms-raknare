@@ -1,15 +1,17 @@
+<div class="mt-4 p-5 bg-primary text-white text-center nogu">
+    <h1>Moms:6%</h1>
+</div>
 {%extends "base.html"%}
 
 {%block content%}
-<div class="mt-4 p-5 bg-primary text-white rounded text-center nogu">
-    <h1>Moms:6%</h1>
-</div>
+
 <div class="container-fluid">
     <div class="row row-cols-1 row-cols-md-3 g-4">
         {%for momsen in moms %}
         <div class="col">
             <div class="card text-center shadow p-3 mb-5 bg-body rounded">
                 <div class="card-header bg-primary text-white">
+                    {{loop.index}}
                     <h5>Sammanfattning</h5>
                 </div>
                 <div class="card-body">
@@ -18,7 +20,7 @@
                         
                     
                 </div>
-                <div class="card-footer text-muted">
+                <div class="card-footer bg-primary text-white">
                    <h4>{{momsen.date_add}}</h4>
                 </div>
             </div>
