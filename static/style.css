@@ -36,6 +36,9 @@
     overflow: hidden;
     margin-bottom: 100px;
 }
+.change-pos{
+    margin-bottom: 10px;
+}
 
 
 @keyframes hero-zoom{ /* själva animeringen sker här*/
