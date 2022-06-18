@@ -93,6 +93,15 @@ def calculatethirty():
         return redirect(url_for("showthirty"))
     return render_template('calculatethirty.html')
 
+@app.route("/sixedit/<int:moms_id>", methods=["GET", "POST"])
+def sixedit(moms_id):
+    moms=Momssix.query.get_or_404(moms_id)
+    if request.method=="POST":
+     moms.moms_six=request.form.get("result")
+     db.session.commit()
+     return redirect(url_for("showsix"))
+    return render_template("sixedit.html", moms=moms)
+
 
 if __name__ == "__main__":
     app.run(
