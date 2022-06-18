@@ -14,6 +14,7 @@ class Momssix(db.Model):
 
     moms_id = db.Column(db.Integer, primary_key=True)
     moms_six = db.Column(db.Integer)
+    moms_produkt = db.Column(db.String(30))
     date_add = db.Column(db.DateTime, default=datetime.utcnow)
 
     def __repr__(self):
@@ -71,7 +72,9 @@ def showthirty():
 @app.route('/calculatesix',  methods=["GET", "POST"])
 def calculatesix():
     if request.method == "POST":
-        moms = Momssix(moms_six=request.form.get("result"))
+        moms = Momssix(moms_six=request.form.get("result"),
+        moms_produkt = request.form.get("produktsex")
+        )
         db.session.add(moms)
         db.session.commit()
         return redirect(url_for("showsix"))
@@ -102,6 +105,7 @@ def sixedit(moms_id):
     moms=Momssix.query.get_or_404(moms_id)
     if request.method == "POST":
         moms.moms_six=request.form.get("result")
+        moms.moms_produkt=request.form.get("produktsex")
         db.session.commit()
         return redirect(url_for("showsix"))
     return render_template("sixedit.html", moms=moms)
