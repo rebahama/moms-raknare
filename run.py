@@ -15,6 +15,7 @@ class Momssix(db.Model):
     moms_id = db.Column(db.Integer, primary_key=True)
     moms_six = db.Column(db.Integer)
     moms_produkt = db.Column(db.String(30))
+    moms_utrakning = db.Column(db.String(30))
     date_add = db.Column(db.DateTime, default=datetime.utcnow)
 
     def __repr__(self):
@@ -65,7 +66,7 @@ def showtwentyfive():
 
 @app.route('/showthirty')
 def showthirty():
-    moms = list(Momsthirty.query.order_by(Momsthirty.moms_id).all())
+    moms = list(Momsthirty.query.order_by(Momsthirty.date_add).all())
     return render_template('showthirty.html', moms=moms)
 
 
@@ -73,7 +74,8 @@ def showthirty():
 def calculatesix():
     if request.method == "POST":
         moms = Momssix(moms_six=request.form.get("result"),
-        moms_produkt = request.form.get("produktsex")
+        moms_produkt = request.form.get("produktsex"),
+        moms_utrakning = request.form.get("test-result")
         )
         db.session.add(moms)
         db.session.commit()

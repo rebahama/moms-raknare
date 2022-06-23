@@ -15,10 +15,9 @@
                 </div>
                 <div class="card-body">
                     <h5 class="card-title"> Produkt: {{momsen.moms_produkt}} </5>
-                    <h5 class="card-title"> Beräkning: {{momsen.moms_six}} Kr</5>
-                    
-                        
-                    
+                    <h5 class="card-title"> Resultat: {{momsen.moms_six}} Kr</5>
+    
+                    <h5 class="card-title">Uträkning: {{momsen.moms_utrakning}} </h5>
                 </div>
                 <a href="{{url_for('sixedit', moms_id=momsen.moms_id)}}" class="btn btn-success change-pos">Ändra</a>
                 <div class="card-footer bg-primary text-white">
