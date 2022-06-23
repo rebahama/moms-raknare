@@ -15,7 +15,7 @@ function countSix(){
     testing.innerHTML= `${valuemoms} - ${sumIt}`
     result.value=Math.round(newvalue)
     console.log(newvalue,sumIt)
-    testing.value=`${valuemoms} - ${sumIt} = ${newvalue}`
+    testing.value=`${Math.round(valuemoms)} - ${Math.round(sumIt)} = ${Math.round(newvalue)}`
 }
 });
     
